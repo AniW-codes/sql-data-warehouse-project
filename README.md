@@ -28,9 +28,54 @@ Develop SQL-based analytics to deliver detailed insights into:
 
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
 
+## 📂 Repository Structure
+```
+data-warehouse-project/
+│
+├── datasets/                                         # Raw datasets used for the project (ERP and CRM data)
+│
+├── docs/                                             # Project documentation and architecture details
+│   ├── DB_Warehouse.sql                              # Script for data base creation
+│   ├── Data Flow Diagram.drawio                      # Draw.io file for the data flow diagram
+│   ├── Data Mart.drawio                              # Final level project architecture of 2 dim and 1 fact table joining
+│   ├── High Level Architecture.drawio                # Data flow architecture leading to formation of the data warehouse
+│   ├── Integration_model.drawio                      # Integration level architechute of columns that can be used for joins
+│   ├── Silver_Cust_Info_Ingestion.sql                # Ingestion of customer info from bronze layer into silver layer (cleaned, transformed)
+│   ├── Silver_Prd_Info_Ingestion.sql                 # Ingestion of products info from bronze layer into silver layer (cleaned, transformed)
+│   ├── Silver_Sales_Details_Ingestion.sql            # Ingestion of sales info from bronze layer into silver layer (cleaned, transformed)
+│   ├── Silver_erp_cust_az12_Ingestion.sql            # Ingestion of meta data of customer (birthdate) from bronze layer into silver layer (cleaned, transformed)
+│   ├── Silver_erp_loc_a101_Ingestion.sql             # Ingestion of meta data of customer (country) from bronze layer into silver layer (cleaned, transformed)
+│   ├── Silver_erp_px_cat_g1v2_Ingestion.sql          # Ingestion of meta data of products (category, subcategory, ) from bronze layer into silver layer(cleaned, transformed)
+│   ├── stored_procedure_silver_layer.sql             # Stored Procedure to automate ingestion of data from multiple raw sources (bronze layer) into **cleaned** silver layer
+│   ├── stored_procedure_bronze_layer.sql             # Stored Procedure to automate ingestion of data from csv files into as it is **raw** form in bronze layer 
+│   ├── data_catalog.md                               # Overview level information of kinds of data-types, column headers and their relevant description in **GOLD layer**.
+│   ├── bronze_layer.sql                              # Creating tables and headers for future data transformations,stored procedures - builiding blocks of bronze layer.
+│   ├── silver_layer.sql                              # Creating tables and headers for future data aggregations, views to gold layer.
+│
+├── scripts/                                          # SQL scripts for ETL and transformations
+│   ├── bronze/                                       # Scripts for extracting and loading raw data
+│   ├── silver/                                       # Scripts for cleaning and transforming data
+│   ├── gold/                                         # Scripts for creating analytical models
+│
+├── tests/                                            # Test scripts and quality files
+│   ├── bronze/                                       # Test scripts for base level data
+│   ├── silver/                                       # Test scripts to validate quality of clean data
+│   ├── gold/                                         # Test scripts to validate final ready-to-use data
+│
+├── README.md                                         # Project overview and instructions
+├── LICENSE                                           # License information for the repository
+├── .gitignore                                        # Files and directories to be ignored by Git
+```
+---
+
 
 ## Licence
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
+## 🌟 About Me
 
+
+Let's stay in touch! Feel free to connect with me on the following platforms:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aniruddhawarang/)
